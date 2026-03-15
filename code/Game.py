@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.Menu import Menu
 
 import pygame
@@ -9,23 +9,18 @@ class Game:
     def __init__(self):
         pygame.init()
 
-        # cria uma janela 640x480
-        self.window = pygame.display.set_mode(size=(640, 480))
+        # cria uma janela com dimensões do arquivo Const.
+        self.window = pygame.display.set_mode(size = (WIN_WIDTH, WIN_HEIGHT))
         pygame.display.set_caption("Meu primeiro jogo")
 
     def run(self, ):
-        running = True
-        while running:
+        while True:
             menu=Menu(self.window)
             menu.run()
 
 
-        # loop principal
 
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
 
-        pygame.quit()
+
 
 
